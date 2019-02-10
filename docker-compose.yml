@@ -6,15 +6,14 @@ services:
       - db
     ports:
       - "5500:5432"
-    environment:
-      POSTGRES_USER: splice
-      POSTGRES_PASSWORD: testing
   replica:
     build: ./replica
-    command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+    command: /setup.sh
     networks:
       - db
     ports:
       - "5501:5432"
+    depends_on:
+      - master
 networks:
   db:

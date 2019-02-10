@@ -1,7 +1,14 @@
 #!/bin/bash
 
-cat <<EOF >> /var/lib/postgresql/data/recovery.conf
-standby_mode = 'on'
-primary_conninfo = 'host=master user=replication password=test port=5432'
-# primary_slot_name = 'splice'
-EOF
+set -e
+
+wait-for-it master:5432
+
+export PGPASSWORD="test"
+
+ls -la /var/lib/postgresql/data
+
+pg_basebackup --pgdata=/var/lib/postgresql/data --write-recovery-conf --create-slot --slot=splice \
+  --host=master --username=rep_user --port=5432 --verbose --progress
+
+exec /usr/local/bin/docker-entrypoint.sh postgres
