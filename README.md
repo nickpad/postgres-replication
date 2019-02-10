@@ -35,13 +35,13 @@ docker-compose down
 The master is mapped to local port 5000, and you can connect to it using `psql`:
 
 ```
-psql --port=5500 --host 0.0.0.0 --user postgres
+psql --port 5500 --host 0.0.0.0 --user postgres
 ```
 
 The replica is mapped to local port 5001:
 
 ```
-psql --port=5501 --host 0.0.0.0 --user postgres
+psql --port 5501 --host 0.0.0.0 --user postgres
 ```
 
 You can check the replication status by running this query on the master:
@@ -65,6 +65,6 @@ It'll help to have some familiarity with Docker.
 The `docker-compose.yml` file configures two services, `master` and `replica`.
 The two containers share a network called `db` so that they can communicate.
 
-To understand how the `master` and `replica` containers are configured, look
-at the files in the `master` and `replica` directories. There are comments in
-each file to explain what's going on.
+To understand how the `master` and `replica` containers are configured, look at
+the files in the `master` and `replica` directories. There are comments in each
+file to explain what's going on.
