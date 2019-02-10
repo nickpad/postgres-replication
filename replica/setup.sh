@@ -5,6 +5,7 @@ set -e
 wait-for-it master:5432
 
 export PGPASSWORD="test"
+export PGSSLMODE="require"
 
 ls -la /var/lib/postgresql/data
 
