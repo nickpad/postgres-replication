@@ -6,6 +6,7 @@ wait-for-it master:5432
 
 export PGPASSWORD="test"
 export PGSSLMODE="require"
+export PGAPPNAME="splice"
 
 ls -la /var/lib/postgresql/data
 
