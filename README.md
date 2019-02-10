@@ -32,13 +32,13 @@ And stop them by running:
 docker-compose down
 ```
 
-The master is mapped to local port 5000, and you can connect to it using `psql`:
+The master is mapped to local port 5500, and you can connect to it using `psql`:
 
 ```
 psql --port 5500 --host 0.0.0.0 --user postgres
 ```
 
-The replica is mapped to local port 5001:
+The replica is mapped to local port 5501:
 
 ```
 psql --port 5501 --host 0.0.0.0 --user postgres
