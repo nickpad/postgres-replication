@@ -21,7 +21,7 @@ EOF
 
 # Create a replication role with login permission.
 # These credentials will be used to connect to the master from the replica instance.
-psql --username=$POSTGRES_USER --command "CREATE ROLE splice_rep WITH REPLICATION LOGIN ENCRYPTED PASSWORD 'test';"
+psql --username "$POSTGRES_USER" --command "CREATE ROLE splice_rep WITH REPLICATION LOGIN ENCRYPTED PASSWORD 'test';"
 
 # The pg_hba.conf file controls access to the PG server. This script
 # writes a config file that allows the "splice_rep" username to open
