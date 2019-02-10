@@ -16,6 +16,5 @@ RUN mv server.key server.crt /ssl
 # set up so that any SQL or shell scripts in the docker-entrypoint-initdb.d directory
 # will be run after the master database is initialized.
 RUN mkdir -p /docker-entrypoint-initdb.d
-COPY setup.sql /docker-entrypoint-initdb.d/setup.sql
 COPY setup.sh /docker-entrypoint-initdb.d/setup.sh
 RUN chmod +x /docker-entrypoint-initdb.d/setup.sh

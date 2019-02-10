@@ -60,9 +60,7 @@ on the master automatically get pushed to the replica.
 
 ## Understanding the configuration.
 
-It'll help to have some familiarity with Docker. The container images
-are built using the `Dockerfile` files in each directory. The `setup.sh` and
-`setup.sql` scripts are run in the containers when they start up.
+It'll help to have some familiarity with Docker.
 
 The `docker-compose.yml` file configures two services, `master` and `replica`.
 The two containers share a network called `db` so that they can communicate.
