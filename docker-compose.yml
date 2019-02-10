@@ -1,0 +1,20 @@
+version: "3"
+services:
+  master:
+    build: ./master
+    networks:
+      - db
+    ports:
+      - "5500:5432"
+    environment:
+      POSTGRES_USER: splice
+      POSTGRES_PASSWORD: testing
+  replica:
+    build: ./replica
+    command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+    networks:
+      - db
+    ports:
+      - "5501:5432"
+networks:
+  db:
