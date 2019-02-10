@@ -14,7 +14,7 @@ listen_addresses = '*'
 wal_level = replica
 
 # The wal_keep_segments value should be increased from the default of 0. This will
-# allow the replica to catch up if it falls slightly begind the master, for example
+# allow the replica to catch up if it falls slightly behind the master, for example
 # if it's temporarily disconnected due to a network issue.
 wal_keep_segments = 10
 EOF
