@@ -7,6 +7,9 @@ services:
       - db
     ports:
       - "5500:5432"
+    environment:
+      - REP_USER=rep_user
+      - REP_PASSWORD=rep_password
   replica:
     build: ./replica
     command: /start_replication.sh
@@ -16,5 +19,11 @@ services:
       - "5501:5432"
     depends_on:
       - master
+    environment:
+      - PGUSER=rep_user
+      - PGPASSWORD=rep_password
+      - PGAPPNAME=rep_test
+      - PGSSLMODE=require
+      - REP_SLOT=rep_test
 networks:
   db:
