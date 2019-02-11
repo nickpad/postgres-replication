@@ -58,7 +58,7 @@ on the master automatically get pushed to the replica.
 [1]: https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION
 [2]: https://www.postgresql.org/docs/current/ddl.html
 
-## Understanding the configuration.
+## Understanding the configuration
 
 It'll help to have some familiarity with Docker.
 
