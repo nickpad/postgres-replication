@@ -24,6 +24,5 @@ services:
       - PGPASSWORD=rep_password
       - PGAPPNAME=rep_test
       - PGSSLMODE=require
-      - REP_SLOT=rep_test
 networks:
   db:
